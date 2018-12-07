@@ -41,22 +41,42 @@ function runProgram(searchType, searchQuery){
 
     // Spotify API Call
     if (searchType === "spotify-this-song"){
-        spotify.search({ type: 'track', query: searchQuery, limit: 5 }, function(err, data) {
-            if (err) {
-            return console.log('Error occurred: ' + err);
-            } 
-            else {
-                for (var j = 0; j < data.tracks.items.length; j++){
-                    console.log("\n ================== \n");
-                    console.log("Result #" + (j + 1) + " Info:");
-                    console.log("Artist(s): " + data.tracks.items[j].album.artists[0].name);
-                    console.log("Song Name: " + data.tracks.items[j].name); 
-                    console.log("Album Name: " + data.tracks.items[j].album.name); 
-                    console.log("Preview URL (30 seconds): " + data.tracks.items[j].preview_url); 
-                    console.log("Link to Full Song in Spotify: " + data.tracks.items[j].external_urls.spotify); 
-                }
-            };
-        })
+        if (searchQuery > -1){
+            spotify.search({ type: 'track', query: "The Sign Ace of Base", limit: 1 }, function(err, data) {
+                if (err) {
+                return console.log('Error occurred: ' + err);
+                } 
+                else {
+                    for (var j = 0; j < data.tracks.items.length; j++){
+                        console.log("\n ================== \n");
+                        console.log("Result #" + (j + 1) + " Info:");
+                        console.log("Artist(s): " + data.tracks.items[j].album.artists[0].name);
+                        console.log("Song Name: " + data.tracks.items[j].name); 
+                        console.log("Album Name: " + data.tracks.items[j].album.name); 
+                        console.log("Preview URL (30 seconds): " + data.tracks.items[j].preview_url); 
+                        console.log("Link to Full Song in Spotify: " + data.tracks.items[j].external_urls.spotify); 
+                    }
+                };
+            })            
+        }
+        else {
+            spotify.search({ type: 'track', query: searchQuery, limit: 5 }, function(err, data) {
+                if (err) {
+                return console.log('Error occurred: ' + err);
+                } 
+                else {
+                    for (var j = 0; j < data.tracks.items.length; j++){
+                        console.log("\n ================== \n");
+                        console.log("Result #" + (j + 1) + " Info:");
+                        console.log("Artist(s): " + data.tracks.items[j].album.artists[0].name);
+                        console.log("Song Name: " + data.tracks.items[j].name); 
+                        console.log("Album Name: " + data.tracks.items[j].album.name); 
+                        console.log("Preview URL (30 seconds): " + data.tracks.items[j].preview_url); 
+                        console.log("Link to Full Song in Spotify: " + data.tracks.items[j].external_urls.spotify); 
+                    }
+                };
+            })
+        }
     }
 
     // OMDb API Call
