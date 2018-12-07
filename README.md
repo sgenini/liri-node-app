@@ -1,7 +1,7 @@
 # LIRI Bot
 
 ### Overview
-LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a Language Interpretation and Recognition Interface. LIRI is be a command line node app that takes in parameters and gives you back data.
+LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a Language Interpretation and Recognition Interface. LIRI is a command line node app that takes in parameters and gives you back data.
 
 ### Functionality
 LIRI accomplishes several functions by using a combination of the Bands in Town Artist Events, Spotify, and OMDb APIs, with the help of several node modules. The program can do the following tasks:
